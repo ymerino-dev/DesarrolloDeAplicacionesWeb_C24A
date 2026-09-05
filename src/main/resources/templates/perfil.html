@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Informacion Personal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6; /* Un gris muy claro y elegante */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+
+        .card {
+            background-color: #ffffff;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra difuminada */
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+
+        .card-header {
+            background-color: #2c3e50; /* Azul oscuro formal */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+
+        .card-body {
+            padding: 30px;
+        }
+
+
+        .info-item {
+            display: flex;
+            justify-content: space-between; /* Separa el título del dato */
+            padding: 12px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        /* Quitar la línea divisoria al último elemento */
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Estilo para las palabras clave (Nombre, Apellido, etc.) */
+        .info-label {
+            font-weight: bold;
+            color: #555555;
+        }
+
+        /* Estilo para los datos de Spring Boot */
+        .info-value {
+            color: #333333;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+
+    <!-- Cabecera -->
+    <div class="card-header">
+        <h1>Perfil Personal</h1>
+    </div>
+
+    <!-- Información -->
+    <div class="card-body">
+        <div class="info-item">
+            <span class="info-label">Nombre:</span>
+            <span class="info-value" th:text="${Persona.nombre}"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Apellido:</span>
+            <span class="info-value" th:text="${Persona.apellido}"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Dirección:</span>
+            <span class="info-value" th:text="${Persona.direccion}"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Teléfono:</span>
+            <span class="info-value" th:text="${Persona.telefono}"></span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
