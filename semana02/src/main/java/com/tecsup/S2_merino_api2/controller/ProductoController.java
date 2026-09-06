@@ -12,17 +12,18 @@ public class ProductoController {
 
     private final ProductoService productoService;
 
-    // Inyección de dependencias mediante el constructor
+    // Inyectamos el Service mediante el constructor
     public ProductoController(ProductoService productoService) {
         this.productoService = productoService;
     }
 
+    // Creamos la ruta web para listar los productos
     @GetMapping("/lista")
     public String verProductos(Model model) {
-        // Obtenemos los productos de la BD y los guardamos en el modelo
+        // Obtenemos los productos y los enviamos al HTML con el nombre "productos"
         model.addAttribute("productos", productoService.listarProductos());
 
-        // Retorna el nombre exacto del archivo HTML (sin el .html)
+        // Retornamos el nombre exacto de la vista HTML (productos.html)
         return "productos";
     }
 }
