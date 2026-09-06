@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: S1_merino_api1
